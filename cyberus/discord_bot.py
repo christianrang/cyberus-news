@@ -1,8 +1,10 @@
+# Standard python libraries
+import os
+import json
+
 # External Imports
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
-import os
-import json
 import aiocron
 
 # Internal Project Imports
@@ -25,10 +27,10 @@ def create_ctf_message(ctf: dict):
     return (
         '>>> ' + '**Title:**\t' + ctf['title'] + '\n'
         '**Description:** \n' + ctf['description'][0:200] + '...' + '\n'
-        '**URL**:' + '<' + ctf['url'] + '>' + '\n'
-        '**Ctftime URL:**' + '<' + ctf['ctftime_url'] + '>' + '\n'
-        '**Start:**' + parse_time(ctf['start']) + '\n'
-        '**Finish:**' + parse_time(ctf['finish']) + '\n'
+        '**URL**: ' + '<' + ctf['url'] + '>' + '\n'
+        '**Ctftime URL:**\t' + '<' + ctf['ctftime_url'] + '>' + '\n'
+        '**Start:**\t' + parse_time(ctf['start']) + '\n'
+        '**Finish:**\t' + parse_time(ctf['finish']) + '\n'
         )
 
 @bot.event
